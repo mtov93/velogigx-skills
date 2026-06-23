@@ -142,8 +142,8 @@ const cover = [
       margins: { top: 150, bottom: 150, left: 220, right: 200 },
       width: { size: 4400, type: WidthType.DXA },
       children: [
-        new Paragraph({ spacing: { after: 30 }, children: [new TextRun({ text: "GERENS", bold: true, font: B.font, size: 30, color: B.accent })] }),
-        new Paragraph({ spacing: { after: 0 }, children: [new TextRun({ text: "gerens.pe", font: B.font, color: B.gray4, size: 22 })] }),
+        new Paragraph({ spacing: { after: 30 }, children: [new TextRun({ text: "ESAN", bold: true, font: B.font, size: 30, color: B.accent })] }),
+        new Paragraph({ spacing: { after: 0 }, children: [new TextRun({ text: "esan.edu.pe", font: B.font, color: B.gray4, size: 22 })] }),
       ],
     })] })] }),
   new Paragraph({ spacing: { before: 300 }, children: [new TextRun({ text: "Junio 2026  ·  Documento confidencial", font: B.font, color: B.gray3 })] }),
@@ -152,10 +152,10 @@ const cover = [
 const body = [];
 // ===== INTRODUCCIÓN =====
 body.push(h1("Introducción"));
-body.push(p("La Escuela de Postgrado GĚRENS es una institución académica peruana fundada en 1998 y la primera escuela de postgrado no adscrita a una universidad en obtener licencia de la SUNEDU (2018). Está especializada en los sectores clave de la economía peruana \u2014 minería, recursos naturales y energía \u2014 con una oferta que incluye el MBA Minero (Maestría en Gestión Minera), el MBA STEM, educación ejecutiva y corporativa, y consultoría. Acumula más de 12,000 profesionales capacitados y cerca de 700 consultorías. Su sitio (gerens.pe) es bilingüe (español e inglés) y soporta inversión publicitaria en Google, Meta y LinkedIn."));
-body.push(p("Esta auditoría evalúa cinco dimensiones del desempeño digital de gerens.pe \u2014 rendimiento técnico, contenido y on-page, visibilidad orgánica, autoridad de dominio y presencia en respuestas de IA \u2014 a partir de datos verificables de Google Lighthouse y DataForSEO, recolectados en junio de 2026."));
+body.push(p("ESAN Graduate School of Business (Universidad ESAN) es una institución académica peruana fundada en 1963 \u2014 la primera escuela de postgrado en administración de negocios del mundo de habla hispana. Con sede en Santiago de Surco (Lima), su oferta incluye el MBA en sus distintas modalidades, más de 15 maestrías especializadas, un programa doctoral, educación ejecutiva (PEE, PAE, diplomas) y educación corporativa. Su MBA es reconocido como el N.°1 del Perú y se ubica entre los primeros de América Latina (QS, Financial Times), con acreditaciones internacionales AACSB y AMBA. Su presencia digital se reparte entre varias propiedades \u2014 el sitio comercial (esan.edu.pe), el portal institucional y de admisión (uesan.edu.pe), la biblioteca y el repositorio de investigación, además de un dominio de pregrado \u2014 e invierte de forma sostenida en publicidad en Google, Meta, LinkedIn y TikTok."));
+body.push(p("Esta auditoría evalúa cinco dimensiones del desempeño digital de esan.edu.pe \u2014 rendimiento técnico, contenido y on-page, visibilidad orgánica, autoridad de dominio y presencia en respuestas de IA \u2014 a partir de datos verificables de Google Lighthouse y DataForSEO, recolectados en junio de 2026."));
 body.push(p([{ text: "Hallazgo principal: ", bold: true, color: B.accent },
-  { text: "GĚRENS tiene una presencia orgánica mínima (1,295 visitas/mes) para una institución con más de 25 años, y un sitio crítico en velocidad: la home pesa 37 MB y tarda 7.4 s en mostrar el contenido principal. El poco tráfico que capta proviene de artículos de blog sin relación con matricularse y de búsquedas por su propio nombre \u2014 mientras sus páginas comerciales (MBA Minero, maestrías) no aparecen en Google y el mercado de postgrado (~33,000 búsquedas/mes) queda casi sin tocar.", bold: true }]));
+  { text: "ESAN es líder claro de su categoría \u2014 capta ~173,844 visitas/mes orgánicas y rankea #1 en \u201Cmba\u201D y #2 en \u201Cmaestrías\u201D \u2014 pero la mayor parte de ese tráfico proviene de artículos informativos de Conexión ESAN (tipo de cambio, recibos por honorarios, marcas), justo el contenido más expuesto a los AI Overviews de Google. Al mismo tiempo, varias búsquedas comerciales de alto valor (posgrado, diplomados, maestrías especializadas) las cede o las responde con un artículo de blog en lugar de su página de programa, y la velocidad del sitio \u2014 home de 24 MB, páginas de programa con LCP de ~5-6 s \u2014 erosiona el rendimiento del fuerte tráfico pagado que la institución dirige a esas mismas páginas.", bold: true }]));
 
 // ===== RESUMEN EJECUTIVO =====
 body.push(pb);
@@ -165,239 +165,266 @@ body.push(img("kpis.png", 625, 0.225));
 body.push(sp(120));
 body.push(h2("Estado general por fase"));
 body.push(tbl(["Fase", "Estado", "Hallazgo principal"], [
-  ["1. Técnico", CRIT, "La home pesa 37 MB y tarda 7.4 s en mostrar el contenido principal."],
-  ["2. Contenido", WARN, "El poco tráfico viene de blog informativo; las páginas de programa no posicionan."],
-  ["3. Keywords", CRIT, "Presencia orgánica mínima; ausente en todas las búsquedas comerciales de posgrado."],
-  ["4. Backlinks", WARN, "Autoridad modesta y razonable, pero no canalizada a las páginas que venden."],
-  ["5. AI Overviews", WARN, "Google resume con IA en sus búsquedas clave y GĚRENS queda debajo del resumen."],
+  ["1. Técnico", WARN, "La home pesa 24 MB; las páginas de programa cargan en ~5-6 s (LCP), por debajo del estándar de Google."],
+  ["2. Contenido", WARN, "El grueso del tráfico viene de Conexión ESAN informativo; algunas páginas de programa ceden la búsqueda a un blog."],
+  ["3. Keywords", ACEPT, "Liderazgo en \u201Cmba\u201D y \u201Cmaestrías\u201D, pero brechas en posgrado, diplomados y varias especializadas."],
+  ["4. Backlinks", ACEPT, "Autoridad de dominio sólida (~478 dominios ref.), poco canalizada hacia las páginas de programa."],
+  ["5. AI Overviews", CRIT, "Su mayor fuente de tráfico \u2014 el contenido informativo \u2014 es la más expuesta a los resúmenes de IA de Google."],
 ], [1700, 1750, 6056]));
 body.push(sp(300));
 body.push(h2("Scores de Google Lighthouse (home)"));
 body.push(tbl(["Categoría", "Score", "Estado"], [
-  ["Performance", { text: "14 / 100", bold: true }, CRIT],
-  ["Accesibilidad", { text: "73 / 100", bold: true }, WARN],
-  ["Best Practices", { text: "73 / 100", bold: true }, WARN],
-  ["SEO", { text: "85 / 100", bold: true }, OK],
+  ["Performance", { text: "50 / 100", bold: true }, WARN],
+  ["Accesibilidad", { text: "89 / 100", bold: true }, OK],
+  ["Best Practices", { text: "69 / 100", bold: true }, WARN],
+  ["SEO", { text: "92 / 100", bold: true }, OK],
 ], [4000, 2753, 2753]));
 body.push(sp(300));
 body.push(callout("EL HALLAZGO CENTRAL", [
-  [{text:"GĚRENS capta apenas "},{text:"~1,295 visitas/mes orgánicas",bold:true},{text:" \u2014 una cifra mínima para una institución de su trayectoria. Casi todo ese tráfico proviene de artículos de blog sin relación con el negocio (minas de oro, valoración, gerentes generales) o de búsquedas por su propio nombre."}],
-  [{text:"Sus páginas comerciales \u2014 "},{text:"MBA Minero, MBA STEM y maestrías",bold:true},{text:" \u2014 no aparecen en Google. Y su competencia en buscador no son escuelas de negocio: son Scribd, el Estado, los diarios y los portales mineros."}],
+  [{text:"ESAN domina su categoría: capta "},{text:"~173,844 visitas/mes orgánicas",bold:true},{text:" con 4,143 keywords, está #1 en \u201Cmba\u201D, #2 en \u201Cmaestrías\u201D y #2 en \u201Cmaestría en finanzas\u201D. La fortaleza es real."}],
+  [{text:"Pero la composición de ese tráfico es el punto a observar: la mayoría llega por artículos de Conexión ESAN sobre temas generales \u2014 tipo de cambio del dólar, recibos por honorarios, marcas, sueldo mínimo \u2014 "},{text:"el contenido que más rápido absorben los AI Overviews de Google",bold:true},{text:". Y en varias búsquedas comerciales (posgrado, diplomados, especialización, marketing) ESAN aparece con un blog o queda fuera del Top 10, en lugar de su página de programa."}],
 ], "biz"));
 body.push(sp(200));
 body.push(callout("LA OPORTUNIDAD EN PERSPECTIVA", [
-  [{text:"El mercado de búsquedas comerciales de postgrado en Perú \u2014 MBA, maestrías, posgrado, diplomados, gestión pública \u2014 supera las "},{text:"33,000 búsquedas/mes",bold:true},{text:". GĚRENS capta efectivamente 0% de ese mercado fuera de su propia marca."}],
-  "Corregir la velocidad del sitio, hacer que las páginas de programa posicionen y construir presencia en el nicho minero \u2014 donde GĚRENS debería ser la autoridad \u2014 convertiría una presencia casi nula en visibilidad real frente a quien decide dónde hacer un posgrado.",
+  [{text:"El mercado de búsquedas comerciales de postgrado en Perú \u2014 MBA, maestrías, posgrado, diplomados, especializadas \u2014 supera las "},{text:"37,000 búsquedas/mes",bold:true},{text:". ESAN captura bien las cabezas que ya optimizó, pero cede una parte de las especializadas y de los términos genéricos de mayor volumen."}],
+  "Endurecer la velocidad de las páginas de programa (donde aterriza el tráfico pagado), reorientar la autoridad del dominio hacia esas páginas y recuperar las búsquedas comerciales que hoy responde un artículo de blog consolidaría el liderazgo de ESAN justo donde se decide una matrícula \u2014 y blindaría su base de tráfico frente al avance de la IA en buscador.",
 ], "green"));
 
 // ===== FASE 01 — TÉCNICO =====
 body.push(pb);
 body.push(chip("FASE 01"));
-body.push(h1("Problemas Técnicos — Prioridad Crítica"));
-body.push(leadin("La velocidad del sitio es lo primero que experimenta un postulante, antes de ver un solo programa. GĚRENS invierte en publicidad en Google, Meta y LinkedIn para atraer tráfico; si la página tarda en cargar, una parte de esas personas \u2014 que ya costaron presupuesto \u2014 se va antes de ver la oferta académica. Y Google penaliza en su ranking a los sitios lentos. Esta sección mide cuán rápido y estable es gerens.pe frente al estándar que Google exige hoy."));
-body.push(h2("Core Web Vitals y Métricas de Rendimiento"));
-body.push(img("cwv.png", 600, 0.3176));
-body.push(caption("Barra = valor del sitio; marca vertical = meta de Google. Menos es mejor."));
-body.push(h2("Cómo leer estas métricas"));
+body.push(h1("Problemas Técnicos — Prioridad de Optimización"));
+body.push(leadin("La velocidad del sitio es lo primero que experimenta un postulante, antes de ver un solo programa. ESAN invierte de forma intensiva en publicidad en Google, Meta, LinkedIn y TikTok para atraer tráfico; si la página tarda en cargar, una parte de esas personas \u2014 que ya costaron presupuesto \u2014 se va antes de ver la oferta académica. Y Google considera la velocidad como factor de ranking. Esta sección mide cuán rápido y estable es esan.edu.pe frente al estándar que Google exige hoy."));
+body.push(h2("Velocidad y estabilidad del sitio"));
+body.push(p([{text:"Google evalúa la experiencia con los "},{text:"Core Web Vitals",bold:true},{text:": las dos métricas clave son "},{text:"LCP",bold:true},{text:" (cuánto tarda en cargar el contenido principal) y "},{text:"CLS",bold:true},{text:" (cuánto se mueve la página al cargar). A ellas se suman métricas de laboratorio \u2014 FCP, Speed Index y TTI \u2014 que ayudan a diagnosticar de dónde viene la lentitud. Así se lee cada una:"}]));
+body.push(sp(120));
 body.push(tbl(["Indicador", "Qué mide (en simple)"], [
-  ["LCP", "Cuánto tarda en aparecer el contenido principal de la página."],
+  ["LCP \u2014 Core Web Vital", "Cuánto tarda en aparecer el contenido principal de la página."],
+  ["CLS \u2014 Core Web Vital", "Cuánto se mueve la página mientras carga (genera clics por error)."],
   ["FCP", "Cuánto tarda en verse el primer elemento al abrir la página."],
   ["Speed Index", "Qué tan rápido se ve completa la pantalla."],
   ["TTI", "Cuánto tarda el sitio en volverse usable tras abrirlo."],
-  ["CLS", "Cuánto se mueve la página mientras carga (genera clics por error)."],
   ["TTFB", "Cuánto tarda el servidor en responder la primera vez."],
   ["Performance", "Nota global de velocidad que Google le da al sitio."],
-], [2200, 7306]));
+], [2600, 6906]));
+body.push(sp(300));
+body.push(img("cwv.png", 600, 0.3176));
+body.push(caption("Métricas de tiempo, en segundos: barra = valor del sitio, marca vertical = meta de Google; menos es mejor. El CLS, al medirse en un puntaje y no en segundos, se reporta en la tabla siguiente."));
 body.push(sp(280));
 body.push(tbl(["Métrica", "Valor", "Meta Google", "Estado"], [
-  ["Performance Score", { text: "14 / 100", bold: true, color: B.red }, "\u2265 90", FAIL],
-  ["LCP (Largest Contentful Paint)", { text: "7.4 s", bold: true, color: B.red }, "< 2.5 s", FAIL],
-  ["FCP (First Contentful Paint)", { text: "2.1 s", bold: true, color: B.orange }, "< 1.8 s", WARN],
-  ["Speed Index", { text: "8.1 s", bold: true, color: B.red }, "< 3.4 s", FAIL],
-  ["TTI (Time to Interactive)", { text: "17.3 s", bold: true, color: B.red }, "< 3.8 s", FAIL],
-  ["CLS (Cumulative Layout Shift)", { text: "0.26", bold: true, color: B.red }, "< 0.10", FAIL],
-  ["TTFB (respuesta del servidor)", { text: "637 ms", bold: true, color: B.green }, "< 800 ms", OK],
+  ["Performance Score", { text: "50 / 100", bold: true, color: B.orange }, "\u2265 90", WARN],
+  ["LCP (Largest Contentful Paint)", { text: "6.0 s", bold: true, color: B.red }, "< 2.5 s", FAIL],
+  ["FCP (First Contentful Paint)", { text: "2.6 s", bold: true, color: B.orange }, "< 1.8 s", WARN],
+  ["Speed Index", { text: "4.7 s", bold: true, color: B.orange }, "< 3.4 s", WARN],
+  ["TTI (Time to Interactive)", { text: "6.6 s", bold: true, color: B.red }, "< 3.8 s", FAIL],
+  ["CLS (Cumulative Layout Shift)", { text: "0.17", bold: true, color: B.orange }, "< 0.10", WARN],
+  ["TTFB (respuesta del servidor)", { text: "1.56 s", bold: true, color: B.red }, "< 0.8 s", FAIL],
 ], [3906, 1900, 1900, 1800]));
 body.push(sp(300));
 body.push(callout("QUÉ SIGNIFICA PARA EL NEGOCIO", [
-  [{text:"El contenido principal de la home tarda "},{text:"7.4 segundos en aparecer",bold:true},{text:", casi tres veces el umbral aceptable, y el sitio recién se vuelve usable a los 17 segundos. Una parte de quienes llegan abandona antes de ver la oferta."}],
-  [{text:"Como GĚRENS lleva tráfico pagado (Google, Meta, LinkedIn) a estas páginas, ese presupuesto se desperdicia en visitantes que se van antes de cargar. Además, "},{text:"Google penaliza a los sitios lentos",bold:true},{text:" bajando la posición orgánica."}],
+  [{text:"El contenido principal de la home tarda "},{text:"6 segundos en aparecer",bold:true},{text:", más del doble del umbral aceptable, y el servidor demora 1.56 s solo en empezar a responder. Una parte de quienes llegan abandona antes de ver la oferta."}],
+  [{text:"Como ESAN dirige tráfico pagado (Google, Meta, LinkedIn, TikTok) a estas páginas, ese presupuesto rinde menos cuando el visitante se va antes de cargar. Además, "},{text:"Google usa la velocidad como factor de ranking",bold:true},{text:", de modo que la lentitud también frena el crecimiento orgánico."}],
 ], "accent"));
 body.push(h2("Peso de Página y Recursos (home)"));
 body.push(tbl(["Métrica", "Valor", "Referencia", "Estado"], [
-  ["Peso total de la página", { text: "37 MB", bold: true, color: B.red }, "< 2\u20133 MB", FAIL],
-  ["Trabajo del hilo principal", { text: "7.9 s", bold: true, color: B.red }, "< 2.0 s", FAIL],
-  ["Arranque de JavaScript", { text: "3.7 s", bold: true, color: B.red }, "< 0.6 s", FAIL],
+  ["Peso total de la home", { text: "24 MB", bold: true, color: B.red }, "< 2\u20133 MB", FAIL],
+  ["Trabajo del hilo principal", { text: "2.9 s", bold: true, color: B.orange }, "< 2.0 s", WARN],
+  ["Arranque de JavaScript", { text: "1.0 s", bold: true, color: B.orange }, "< 0.6 s", WARN],
 ], [3906, 1900, 1900, 1800]));
 body.push(sp(280));
-body.push(p([{text:"La página interna de la maestría carga mucho mejor (4 MB, LCP 2.7 s): ",},{text:"el problema está concentrado en la home",bold:true},{text:", que es justamente la puerta de entrada y la página a la que llega la publicidad."}]));
+body.push(p([{text:"La página interna del MBA \u2014 donde aterriza buena parte de la publicidad \u2014 carga más liviana (3.8 MB) pero "},{text:"obtiene un Performance de 46/100, con LCP de 5.1 s y un CLS de 0.22",bold:true},{text:": el contenido se mueve mientras carga, lo que genera clics por error en una página de conversión. La lentitud no es solo de la home: es un patrón del sitio, y golpea justo donde se decide una matrícula."}]));
 body.push(h2("Stack Tecnológico Detectado"));
 body.push(tbl(["Componente", "Detalle", "Observación"], [
+  ["Plataforma", "Joomla + módulo Google PageSpeed", "CMS con optimización de imágenes activada."],
   ["Gestor de tags", "Google Tag Manager", "Orquesta múltiples scripts a la vez."],
-  ["Analítica", "Yandex Metrica + Microsoft Clarity", "Dos herramientas de analítica en paralelo."],
-  ["Publicidad", "Google Ads, LinkedIn Ads, Retargetly, Meta", "Cuatro plataformas de retargeting cargando."],
-  ["CDN", "JSDelivr", "Recursos externos adicionales por descargar."],
+  ["Analítica", "GA + Hotjar + Microsoft Clarity + Yandex", "Cuatro herramientas de analítica en paralelo."],
+  ["Publicidad", "Google Ads, Meta, LinkedIn, TikTok", "Cuatro plataformas de retargeting cargando."],
 ], [2700, 3906, 2900]));
 body.push(sp(280));
 body.push(callout("IMPACTO ESTIMADO DE LA FASE", [
-  "Con una home de 37 MB y un LCP de 7.4 s, una porción significativa del tráfico que llega \u2014 orgánico y pagado \u2014 abandona antes de interactuar. Buena parte de ese peso viene de acumular varias herramientas de analítica y publicidad cargando a la vez. La velocidad condiciona el rendimiento de todo lo demás: SEO, contenido y publicidad terminan en una página que tarda demasiado en cargar.",
+  "Con una home de 24 MB y páginas de programa con LCP de ~5-6 s, una porción del tráfico que llega \u2014 orgánico y, sobre todo, pagado \u2014 abandona antes de interactuar. Buena parte de ese peso viene de acumular cuatro herramientas de analítica y cuatro de publicidad cargando a la vez. Para una institución que invierte de forma sostenida en captación, la velocidad es la palanca de mayor retorno inmediato: mejora la conversión de cada visita pagada y el ranking orgánico al mismo tiempo.",
 ], "red"));
 
 // ===== FASE 02 — CONTENIDO =====
 body.push(pb);
 body.push(chip("FASE 02"));
-body.push(h1("Contenido y On-page — Tráfico que no es del Negocio"));
-body.push(leadin("El sitio es el vendedor que trabaja las 24 horas. Si el contenido que atrae visitas no tiene relación con lo que se vende, ese tráfico se ve en los reportes pero no acerca a nadie a matricularse. Esta sección revisa de dónde viene realmente el tráfico de GĚRENS y si comunica su oferta a quien la está buscando."));
+body.push(h1("Contenido y On-page — Un Tráfico que No es del Negocio"));
+body.push(leadin("El sitio es el vendedor que trabaja las 24 horas. Si el contenido que atrae visitas no tiene relación con lo que se vende, ese tráfico se ve en los reportes pero no acerca a nadie a matricularse. Esta sección revisa de dónde viene realmente el tráfico de ESAN y si su oferta llega a quien la está buscando."));
 body.push(img("donut.png", 600, 0.3756));
 body.push(sp(120));
 body.push(h2("Composición del tráfico orgánico"));
 body.push(tbl(["Página que atrae tráfico", "Búsqueda principal", "Tipo de contenido"], [
-  ["Blog: principales mineras de oro", "minera oro / mineras de oro (1.3K)", { text: "Blog informativo", color: B.accent }],
-  ["Blog: ¿Qué es valoración?", "valoración (1.6K)", { text: "Blog informativo", color: B.accent }],
-  ["Blog: gerentes generales estratégicos", "gerentes generales (2.9K)", { text: "Blog informativo", color: B.accent }],
-  ["Blog: ¿Qué es ser un comunicador?", "comunicadores (720)", { text: "Blog informativo", color: B.accent }],
-  ["Home", "gerens (1.3K)", { text: "Marca", color: B.accent }],
+  ["Conexión ESAN: factura vs. recibo por honorarios", "recibo por honorarios (246K)", { text: "Blog informativo", color: B.accent }],
+  ["Conexión ESAN: tendencia del dólar", "tipo de cambio dólar (301K)", { text: "Blog informativo", color: B.accent }],
+  ["Conexión ESAN: ranking de marcas", "marcas (110K)", { text: "Blog informativo", color: B.accent }],
+  ["Conexión ESAN: aumento de sueldo mínimo", "sueldo mínimo peru (90K)", { text: "Blog informativo", color: B.accent }],
+  ["Home", "esan (40K)", { text: "Marca", color: B.accent }],
 ], [3700, 3306, 2500]));
 body.push(sp(300));
 body.push(callout("QUÉ SIGNIFICA PARA EL NEGOCIO", [
-  [{text:"Las páginas que más tráfico atraen son artículos de blog de hace varios años sobre temas que no llevan a una matrícula: alguien que busca \u201Cqué es valoración\u201D o \u201Cminas de oro\u201D no está evaluando un MBA. Es tráfico que "},{text:"no alimenta el negocio",bold:true},{text:", y por debajo de él, la única página comercial con tracción es la home \u2014 y solo por el nombre de la marca."}],
+  [{text:"Las páginas que más tráfico atraen son artículos de Conexión ESAN sobre temas de coyuntura \u2014 el precio del dólar, cómo emitir un recibo por honorarios, el sueldo mínimo \u2014 que captan grandes volúmenes pero "},{text:"no corresponden a alguien evaluando una maestría",bold:true},{text:". Es un activo de marca y reputación valioso, pero por sí solo no alimenta la matrícula, y por debajo de él las páginas de programa aportan una fracción del tráfico."}],
 ], "accent"));
-body.push(h2("Las páginas de programa no captan tráfico"));
-body.push(p([{text:"GĚRENS "},{text:"sí tiene",bold:true},{text:" páginas comerciales construidas: el MBA Minero, el MBA STEM y decenas de cursos de educación ejecutiva y corporativa enfocados en minería (gestión de costos mineros, evaluación de proyectos mineros, perforación y voladura, relaves). El problema no es que falten páginas, sino que "},{text:"ninguna de ellas aparece entre las páginas que captan tráfico orgánico",bold:true},{text:". El esfuerzo editorial está en el blog informativo, desconectado de las páginas que venden."}]));
-body.push(p([{text:"El sitio además es bilingüe (ES/EN); conviene verificar que la versión en inglés no genere contenido duplicado ni reste fuerza a las URLs principales en español."}]));
+body.push(h2("Detalles on-page detectados"));
+body.push(p([{text:"En la inspección del sitio aparecen dos hallazgos concretos y de bajo esfuerzo. El primero, en el encabezado de la home:"}]));
 body.push(sp(120));
+body.push(callout("LO QUE ENCUENTRA GOOGLE EN LA HOME", [
+  [{text:"Etiqueta og:title: "},{text:"\u201CHome Esan\u201D",bold:true},{text:". Es el título que Google y las redes muestran al referenciar el sitio \u2014 un placeholder genérico, no el nombre de la marca ni su oferta. El title de la home tampoco incorpora las búsquedas comerciales de cabecera (MBA, maestrías, posgrado) que la propia ESAN ya trabaja."}],
+], "accent"));
+body.push(sp(200));
+body.push(p([{text:"El segundo es estructural: "},{text:"la autoridad del dominio está repartida entre varias propiedades distintas",bold:true},{text:", cada una acumulando enlaces y señales por separado en lugar de concentrarlas en las páginas de programa que deben rankear."}]));
+body.push(sp(120));
+body.push(tbl(["Propiedad", "Rol", "Lectura SEO"], [
+  ["esan.edu.pe", "Sitio comercial: programas + blog Conexión", "Donde deben ganar las páginas de matrícula."],
+  ["uesan.edu.pe", "Portal institucional y admisión (pa.uesan.edu.pe)", "Capta enlaces y marca por separado."],
+  ["biblioteca.uesan.edu.pe / repositorio", "Biblioteca, tesis e investigación", "Genera autoridad que no llega al sitio comercial."],
+  ["Dominio de pregrado", "Oferta de pregrado bajo otra marca", "Diluye la señal de \u201CESAN\u201D entre dominios."],
+], [3100, 3900, 3206]));
+body.push(sp(300));
 body.push(callout("IMPACTO ESTIMADO DE LA FASE", [
-  "El volumen de tráfico ya es bajo, y además es de baja relevancia comercial: la mayor parte no corresponde a personas buscando un posgrado. El contenido informativo puede ser un activo, pero hoy no está canalizado hacia las páginas de programa ni hacia las búsquedas de quien decide dónde matricularse.",
+  "El volumen de tráfico es alto, pero su intención comercial es baja: la mayor parte no corresponde a personas buscando un posgrado. El contenido de Conexión ESAN es un activo de marca real; el desafío es canalizarlo hacia las páginas de programa (enlazado interno, llamados a la acción contextuales) y afinar el on-page de esas páginas para que conviertan la enorme audiencia informativa en prospectos de matrícula.",
 ], "red"));
 
 // ===== FASE 03 — KEYWORDS =====
 body.push(pb);
 body.push(chip("FASE 03"));
-body.push(h1("Keywords — Presencia Comercial Casi Nula"));
-body.push(leadin("Cada búsqueda en Google es un cliente potencial levantando la mano. Esta sección separa el poco tráfico que GĚRENS capta hoy del mercado comercial de posgrado que, teniendo los programas para atenderlo, aún no toca."));
+body.push(h1("Keywords — Liderazgo con Brechas Comerciales"));
+body.push(leadin("Cada búsqueda en Google es un cliente potencial levantando la mano. Esta sección separa el tráfico que ESAN ya capta del mercado comercial de posgrado que, teniendo los programas para atenderlo, todavía cede a un blog propio o a la competencia."));
 body.push(h2("Métricas generales de posicionamiento"));
 body.push(tbl(["Métrica", "Valor", "Análisis"], [
-  ["Tráfico orgánico estimado (ETV)", { text: "1,295 visitas/mes", bold: true }, "Mínimo para una institución de 25+ años."],
-  ["Keywords posicionadas", { text: "82", bold: true }, "Cobertura muy estrecha, mayormente de blog."],
-  ["Keywords en Top 10", { text: "25", bold: true }, "Casi todas informativas, no comerciales."],
-  ["Keywords en posición #1", { text: "1", bold: true }, "Es su propia marca (\u201Cgerens\u201D)."],
+  ["Tráfico orgánico estimado (ETV)", { text: "173,844 visitas/mes", bold: true }, "Líder claro de la categoría educativa en Perú."],
+  ["Keywords posicionadas", { text: "4,143", bold: true }, "Cobertura amplia, con fuerte sesgo informativo."],
+  ["Keywords en Top 10", { text: "~1,907", bold: true }, "Base sólida; muchas son de blog, no de programa."],
+  ["Keywords en posición #1", { text: "135", bold: true }, "Incluye marca y cabezas comerciales (mba)."],
 ], [3900, 2306, 3300]));
 body.push(sp(300));
 body.push(h2("Las búsquedas comerciales del negocio — dónde rankea hoy"));
-body.push(caption("Posición actual de gerens.pe en Google (Perú) para sus búsquedas comerciales clave."));
-body.push(tbl(["Búsqueda comercial", "Vol./mes", "Posición GĚRENS", "Visitas/mes est."], [
-  ["gerens (marca)", "1,300", { text: "#1", bold: true, color: B.green }, "~395"],
-  ["escuelas de posgrado", "1,600", { text: "#26", bold: true, color: B.orange }, "~3"],
-  ["maestría en gestión minera", "140", { text: "No posiciona", bold: true, color: B.red }, "~0"],
-  ["gestión minera", "170", { text: "No posiciona", bold: true, color: B.red }, "~0"],
-  ["posgrado", "4,400", { text: "No posiciona", bold: true, color: B.red }, "~0"],
-  ["maestrías", "6,600", { text: "No posiciona", bold: true, color: B.red }, "~0"],
-  ["mba", "6,600", { text: "No posiciona", bold: true, color: B.red }, "~0"],
-  ["diplomados", "4,400", { text: "No posiciona", bold: true, color: B.red }, "~0"],
-], [3906, 1500, 2400, 1700]));
+body.push(caption("Posición actual de esan.edu.pe en Google (Perú) para sus búsquedas comerciales clave."));
+body.push(tbl(["Búsqueda comercial", "Vol./mes", "Posición ESAN", "Lectura"], [
+  ["mba", "6,600", { text: "#1", bold: true, color: B.green }, "Página /mba. Capturada."],
+  ["maestrías", "6,600", { text: "#2", bold: true, color: B.green }, "Página /maestrias. Capturada."],
+  ["maestría en finanzas", "880", { text: "#2", bold: true, color: B.green }, "Página de programa. Capturada."],
+  ["educación ejecutiva", "390", { text: "#3", bold: true, color: B.green }, "Página de sección; pero viene cayendo."],
+  ["maestría en gestión pública", "3,600", { text: "#6", bold: true, color: B.orange }, "A un paso del Top 5; Pacífico está #5."],
+  ["especialización", "1,900", { text: "#9", bold: true, color: B.orange }, "Detrás de Centrum (#1) y UPC (#2)."],
+  ["doctorado", "2,400", { text: "#12", bold: true, color: B.orange }, "Fuera del Top 10 pese a tener el programa."],
+  ["diplomados", "4,400", { text: "#38", bold: true, color: B.red }, "El hub /diploma casi no posiciona; UPC #6."],
+  ["posgrado", "4,400", { text: "#53", bold: true, color: B.red }, "Solo la home; sin landing dedicada; UPC #21."],
+  ["maestría en marketing", "390", { text: "#3 (blog)", bold: true, color: B.orange }, "Rankea un artículo de Conexión, no el programa."],
+], [3300, 1300, 2200, 2706]));
 body.push(sp(300));
 body.push(callout("QUÉ SIGNIFICA PARA EL NEGOCIO", [
-  [{text:"GĚRENS domina su propia marca \u2014 está "},{text:"#1 en \u201Cgerens\u201D",bold:true},{text:" \u2014 pero está ausente en prácticamente todas las búsquedas comerciales del negocio. Lo más llamativo: incluso en "},{text:"\u201Cmaestría en gestión minera\u201D y \u201Cgestión minera\u201D",bold:true},{text:", el nicho donde GĚRENS debería ser la autoridad del país, no aparece en los resultados."}],
+  [{text:"ESAN gana las cabezas que ya optimizó \u2014 está "},{text:"#1 en \u201Cmba\u201D y #2 en \u201Cmaestrías\u201D",bold:true},{text:" \u2014 pero deja valor sobre la mesa en el resto. En \u201Cposgrado\u201D (4,400/mes) solo aparece la home en la posición #53 mientras UPC está #21; en \u201Cdiplomados\u201D (4,400/mes) su hub está en #38 frente al #6 de UPC; y en \u201Cmaestría en marketing\u201D "},{text:"Google muestra un artículo de Conexión ESAN en lugar de la página del programa",bold:true},{text:" \u2014 una canibalización que envía a la persona a leer, no a postular."}],
 ], "accent"));
-body.push(h2("Keywords ausentes con intención comercial"));
-body.push(p([{text:"Las búsquedas donde GĚRENS tiene programa pero no presencia. La columna \u201CVisitas/mes est.\u201D aplica un CTR conservador del 5% (el dominio hoy no posiciona en lo comercial; 5% asume alcanzar primera página, no Top 3). No se aplica ninguna tasa de conversión."}]));
-body.push(tbl(["Keyword ausente", "Vol./mes", "Por qué debería aparecer", "Visitas/mes est."], [
-  ["maestrías", "6,600", "Ofrece maestrías; término raíz del negocio.", "~330"],
-  ["mba", "6,600", "Tiene MBA Minero y MBA STEM.", "~330"],
-  ["posgrado", "4,400", "Es una escuela de postgrado licenciada.", "~220"],
-  ["diplomados", "4,400", "Oferta amplia de diplomados ejecutivos.", "~220"],
-  ["maestría en gestión pública", "3,600", "Cartera de gestión y management.", "~180"],
-  ["doctorado", "2,400", "Nivel de posgrado colindante.", "~120"],
-  ["escuelas de posgrado", "1,600", "Categoría directa; hoy en #26.", "~80"],
-  ["maestría en finanzas", "880", "Tiene cursos de costos y finanzas.", "~44"],
-  ["maestría en gestión de proyectos", "880", "Gestión de proyectos mineros.", "~44"],
-  ["educación ejecutiva", "390", "Línea de negocio propia.", "~20"],
-  ["maestría en project management", "320", "Programas de gestión de proyectos.", "~16"],
-  ["gestión minera", "170", "Su especialidad central.", "~9"],
-  ["maestría en gestión minera", "140", "Su programa estrella (MMBA).", "~7"],
-  ["diplomado en minería", "70", "Múltiples diplomados mineros.", "~4"],
-  ["maestría en minería", "70", "Su nicho de especialización.", "~4"],
-], [3500, 1300, 3206, 1500]));
+body.push(h2("Oportunidades de captura comercial"));
+body.push(p([{text:"Búsquedas de intención comercial donde ESAN "},{text:"tiene el programa pero cede la posición",bold:true},{text:" \u2014 queda fuera del Top 5 o Google muestra un artículo en lugar de la página de matrícula. Son las brechas con el mayor volumen detrás."}]));
+body.push(tbl(["Búsqueda", "Vol./mes", "Hoy", "Por qué importa capturarla"], [
+  ["posgrado", "4,400", { text: "#53", bold: true, color: B.red }, "Término de referencia de la categoría; hoy solo aparece la home. UPC está #21."],
+  ["diplomados", "4,400", { text: "#38", bold: true, color: B.red }, "Cartera amplia de diplomas; el hub apenas posiciona. UPC está #6."],
+  ["maestría en gestión pública", "3,600", { text: "#6", bold: true, color: B.orange }, "Tiene el programa líder del país; a un paso del Top 5."],
+  ["postgrado", "2,400", { text: "#28", bold: true, color: B.red }, "Variante de alto volumen, sin landing dedicada."],
+  ["doctorado", "2,400", { text: "#12", bold: true, color: B.orange }, "Programa doctoral acreditado AACSB, fuera del Top 10."],
+  ["especialización", "1,900", { text: "#9", bold: true, color: B.orange }, "Detrás de Centrum (#1) y UPC (#2)."],
+  ["escuelas de posgrado", "1,600", { text: "#51", bold: true, color: B.red }, "Búsqueda de quien todavía está eligiendo escuela."],
+  ["diplomado en recursos humanos", "720", { text: "#7", bold: true, color: B.orange }, "Cerca del Top 5; diplomas de gestión de personas."],
+  ["maestría en ciencia de datos", "590", { text: "#6", bold: true, color: B.orange }, "Vertical en alza, fuera del Top 5."],
+  ["maestría en marketing digital", "170", { text: "#8", bold: true, color: B.orange }, "El programa correcto, pero cayó de #4 a #8."],
+], [3300, 1150, 1100, 4256]));
 body.push(sp(220));
 body.push(callout("OPORTUNIDAD EN TRÁFICO", [
-  [{text:"Estas búsquedas suman "},{text:"~33,000 búsquedas/mes",bold:true},{text:". Capturarlas en primera página representa del orden de "},{text:"~1,650 visitas/mes",bold:true},{text:" \u2014 más del doble de todo el tráfico orgánico que GĚRENS capta hoy, y de intención mucho más comercial."}],
+  [{text:"En conjunto, estas búsquedas representan "},{text:"~22,180 búsquedas/mes",bold:true},{text:" de intención comercial donde ESAN tiene el programa pero no la posición. Llevarlas al Top 5 significa del orden de "},{text:"~1,500 visitas/mes adicionales de alta intención",bold:true},{text:" \u2014 prospectos evaluando un programa, no lectores de coyuntura. Es tráfico de mucho mayor valor que el informativo: a estas personas las separa una sola decisión de la matrícula. (Aparte quedan \u201Cmaestría en marketing\u201D e \u201Cinteligencia artificial\u201D, tratadas como casos de canibalización y de competencia directa.)"}],
 ], "green"));
-body.push(h2("Con quién compite hoy en Google"));
-body.push(caption("Sitios que comparten más resultados de búsqueda con gerens.pe (keywords en común)."));
-body.push(img("competidores.png", 545, 0.586));
-body.push(sp(120));
+body.push(h2("Cómo compite ESAN, búsqueda por búsqueda"));
+body.push(caption("Posición en Google (Perú) en las 10 búsquedas comerciales que deciden una matrícula, frente a sus tres rivales directos. Verde = Top 3 · naranja = 4-10 · gris = fuera del Top 10 o sin posicionar."));
+body.push(tbl(["Búsqueda", "Vol./mes", "ESAN", "Pacífico", "UPC", "Centrum"], [
+  ["mba", "6,600", { text: "#1", bold: true, color: B.green }, { text: "\u2014", color: B.gray4 }, { text: "#4", color: B.orange }, { text: "#2", color: B.green }],
+  ["maestrías", "6,600", { text: "#2", bold: true, color: B.green }, { text: "#50", color: B.gray4 }, { text: "#4", color: B.orange }, { text: "\u2014", color: B.gray4 }],
+  ["maestría en finanzas", "880", { text: "#2", bold: true, color: B.green }, { text: "#11", color: B.gray4 }, { text: "#7", color: B.orange }, { text: "#4", color: B.orange }],
+  ["maestría en gestión pública", "3,600", { text: "#6", bold: true, color: B.orange }, { text: "#5", color: B.green }, { text: "#7", color: B.orange }, { text: "\u2014", color: B.gray4 }],
+  ["doctorado", "2,400", { text: "#12", bold: true, color: B.gray4 }, { text: "\u2014", color: B.gray4 }, { text: "\u2014", color: B.gray4 }, { text: "\u2014", color: B.gray4 }],
+  ["especialización", "1,900", { text: "#9", bold: true, color: B.orange }, { text: "#13", color: B.gray4 }, { text: "#2", color: B.green }, { text: "#1", color: B.green }],
+  ["maestría en inteligencia artificial", "880", { text: "#5", bold: true, color: B.orange }, { text: "\u2014", color: B.gray4 }, { text: "#1", color: B.green }, { text: "\u2014", color: B.gray4 }],
+  ["maestría en marketing", "390", { text: "#3 blog", bold: true, color: B.orange }, { text: "#63", color: B.gray4 }, { text: "\u2014", color: B.gray4 }, { text: "#4", color: B.orange }],
+  ["diplomados", "4,400", { text: "#38", bold: true, color: B.gray4 }, { text: "#49", color: B.gray4 }, { text: "#6", color: B.orange }, { text: "\u2014", color: B.gray4 }],
+  ["posgrado", "4,400", { text: "#53", bold: true, color: B.gray4 }, { text: "#63", color: B.gray4 }, { text: "#21", color: B.gray4 }, { text: "\u2014", color: B.gray4 }],
+], [3100, 1250, 1250, 1350, 1100, 1456]));
+body.push(sp(300));
+body.push(caption("En cuántas de esas 10 búsquedas comerciales cada escuela aparece en Top 5 y en Top 10."));
+body.push(img("visibilidad.png", 540, 0.354));
+body.push(sp(160));
 body.push(callout("QUÉ SIGNIFICA PARA EL NEGOCIO", [
-  [{text:"Los mayores \u201Ccompetidores\u201D de GĚRENS en Google son repositorios de documentos (Scribd, Studocu), el Estado (gob.pe, Minem) y diarios (Gestión, El Comercio) \u2014 "},{text:"ninguno es una escuela de postgrado",bold:true},{text:". Es la prueba de que su SEO compite en el carril informativo, no en el de la educación ejecutiva. ESAN también aparece, pero por sus artículos de blog, no por sus programas."}],
+  [{text:"El liderazgo de ESAN es real pero "},{text:"desigual",bold:true},{text:". Domina las cabezas de marca \u2014 #1 en \u201Cmba\u201D, #2 en \u201Cmaestrías\u201D y #2 en \u201Cfinanzas\u201D \u2014 donde nadie la alcanza. Pero pierde las búsquedas genéricas de alto volumen, las del que aún no eligió escuela: en \u201Cposgrado\u201D y \u201Cdiplomados\u201D (4,400/mes cada una) "},{text:"UPC rankea muy por encima",bold:true},{text:" (#21 y #6 vs. #53 y #38), y en \u201Cespecialización\u201D va detrás de Centrum (#1) y UPC (#2). En \u201Cinteligencia artificial\u201D, un vertical en alza, "},{text:"UPC está #1 y ESAN #5",bold:true},{text:". Medido por presencia comercial, UPC iguala a ESAN (ambas en 7 de 10 búsquedas en Top 10) y la supera justo donde se capta al prospecto indeciso."}],
 ], "accent"));
-body.push(h2("Con quién debería competir — las escuelas de negocio"));
-body.push(caption("Valor del tráfico orgánico mensual: lo que costaría comprarlo en Google Ads."));
-body.push(img("eficiencia.png", 600, 0.2589));
+body.push(h2("Por qué la comparación NO es de tráfico total"));
+body.push(p([{text:"Es tentador comparar el tráfico total de cada dominio, pero "},{text:"sería engañoso",bold:true},{text:": UPC y Pacífico son universidades completas (pregrado + posgrado + admisión), mientras que ESAN y Centrum son escuelas de posgrado. El tráfico total de las dos primeras incluye carreras, admisión y vida universitaria que nada tienen que ver con el negocio de ESAN. Por eso la comparación que importa es la de arriba \u2014 posición por posición en las mismas búsquedas \u2014 y no la del volumen agregado."}]));
 body.push(sp(120));
-body.push(tbl(["Dominio", "Keywords", "Tráfico orgánico", "Valor del tráfico"], [
-  ["gerens.pe", "82", "1,295 visitas/mes", { text: "$680", bold: true, color: B.red }],
-  ["esan.edu.pe", "4,143", "173,843 visitas/mes", { text: "$96,692", bold: true, color: B.green }],
-], [3000, 2000, 2706, 1800]));
-body.push(sp(280));
-body.push(callout("QUÉ SIGNIFICA PARA EL NEGOCIO", [
-  [{text:"ESAN es el referente del mercado, no un competidor directo: muestra el tamaño del mercado de postgrado que GĚRENS hoy no toca. "},{text:"GĚRENS no necesita igualar a ESAN",bold:true},{text:", pero sí debería aparecer en las búsquedas comerciales de su propio nicho \u2014 la minería \u2014 donde tiene la oferta más especializada del país y, aun así, hoy es invisible."}],
-], "accent"));
+body.push(tbl(["Dominio", "Tipo de institución", "Keywords", "Tráfico orgánico"], [
+  ["upc.edu.pe", "Universidad (pregrado + posgrado)", "6,557", "946,675 visitas/mes"],
+  ["up.edu.pe (Pacífico)", "Universidad (pregrado + posgrado)", "2,546", "388,562 visitas/mes"],
+  ["esan.edu.pe", "Escuela de posgrado", "4,143", { text: "173,844 visitas/mes", bold: true, color: B.accent }],
+  ["centrum.pucp.edu.pe", "Escuela de posgrado", "169", "15,420 visitas/mes"],
+], [2700, 3400, 1500, 2406]));
+body.push(sp(300));
 body.push(h2("La posición competitiva de un vistazo"));
 body.push(tbl(["Dimensión", "Situación actual", "Estado", "Lectura"], [
-  ["Volumen de tráfico", "1,295 visitas/mes", FAIL, "Mínimo para su trayectoria."],
-  ["Calidad del tráfico", "Blog + marca", FAIL, "Las páginas de programa no captan."],
-  ["Velocidad (LCP home)", "7.4 s", FAIL, "Casi 3x la meta de 2.5 s."],
-  ["Peso de página (home)", "37 MB", FAIL, "~15x lo recomendable."],
-  ["Autoridad de dominio", "146 dominios ref.", WARN, "Base razonable, sin canalizar."],
-  ["Comerciales de marca", "#1 \u201Cgerens\u201D", OK, "Domina su propio nombre."],
-  ["Comerciales del negocio", "Fuera del Top 100", FAIL, "Posgrado, maestrías, MBA: invisible."],
+  ["Volumen de tráfico", "173,844 visitas/mes", OK, "Líder de la categoría educativa."],
+  ["Calidad del tráfico", "Mayoría informativo", WARN, "Conexión ESAN > páginas de programa."],
+  ["Velocidad (LCP home)", "6.0 s", FAIL, "~2.4x la meta de 2.5 s."],
+  ["Velocidad (página MBA)", "5.1 s · CLS 0.22", FAIL, "La página de conversión también es lenta."],
+  ["Autoridad de dominio", "~478 dominios ref.", OK, "Sólida; poco canalizada a programas."],
+  ["Comerciales de cabecera", "#1 mba · #2 maestrías · #2 finanzas", OK, "Domina las cabezas de marca; nadie la alcanza."],
+  ["Genéricas de alto volumen", "Posgrado #53 · Diplomados #38", WARN, "UPC rankea muy por encima (#21 · #6)."],
+  ["Verticales emergentes", "IA #5 · marketing rankea un blog", WARN, "UPC lidera IA (#1); canibalización en marketing."],
 ], [2700, 2500, 1600, 2706]));
 body.push(sp(300));
 body.push(callout("IMPACTO ESTIMADO DE LA FASE", [
-  "El problema de GĚRENS no es la calidad del tráfico, sino su ausencia: está fuera de las búsquedas que importan, incluso en su propio nicho minero, donde debería ser la autoridad. Cerrar la velocidad del sitio y posicionar las páginas de programa por las búsquedas comerciales es la palanca de mayor impacto del documento.",
+  "ESAN no tiene un problema de presencia, sino de eficiencia comercial: lidera su categoría, pero parte de su enorme tráfico es informativo de bajo valor y varias búsquedas de matrícula las cede o las responde con un blog. Llevar las páginas de programa al Top 5 en posgrado, diplomados y las especializadas \u2014 y canalizar hacia ellas la autoridad que ya tiene \u2014 es la palanca de mayor impacto comercial del documento.",
 ], "red"));
 
 // ===== FASE 04 — BACKLINKS =====
 body.push(pb);
 body.push(chip("FASE 04"));
-body.push(h1("Backlinks — Autoridad Modesta y sin Canalizar"));
-body.push(leadin("Los enlaces de otros sitios funcionan como recomendaciones: mientras más sitios relevantes enlacen, más confía Google. Esta sección mide la autoridad que GĚRENS ha acumulado y si esa fuerza está empujando a las páginas correctas."));
+body.push(h1("Backlinks — Autoridad Sólida y sin Canalizar"));
+body.push(leadin("Los enlaces de otros sitios funcionan como recomendaciones: mientras más sitios relevantes enlacen, más confía Google. Esta sección mide la autoridad que ESAN ha acumulado y si esa fuerza está empujando a las páginas correctas."));
 body.push(h2("Perfil de autoridad del dominio"));
 body.push(tbl(["Métrica", "Valor", "Análisis"], [
-  ["Dominios referentes", { text: "~146", bold: true }, "Base razonable para una escuela de nicho."],
-  ["Backlinks totales", { text: "~1,260", bold: true }, "Volumen modesto, acumulado con los años."],
-  ["Enlaces dofollow", { text: "~1,129 (90%)", bold: true }, "Buena proporción que transmite autoridad."],
-  ["Domain Rank (DataForSEO, 0\u20131000)", { text: "~269", bold: true }, "Dominio de autoridad media."],
+  ["Dominios referentes (home)", { text: "~478", bold: true }, "Autoridad sólida para una institución educativa."],
+  ["Backlinks totales (home)", { text: "~37,170", bold: true }, "Volumen alto acumulado en décadas."],
+  ["Enlaces dofollow", { text: "~32,166 (87%)", bold: true }, "Buena proporción que transmite autoridad."],
+  ["Domain Rank (DataForSEO, 0\u20131000)", { text: "~389", bold: true }, "Dominio de autoridad alta."],
 ], [3906, 2300, 3300]));
 body.push(sp(300));
 body.push(callout("QUÉ SIGNIFICA PARA EL NEGOCIO", [
-  [{text:"La autoridad de GĚRENS es razonable para su tamaño, pero "},{text:"modesta frente a las escuelas grandes",bold:true},{text:" (ESAN supera los 470 dominios referentes). El problema no es solo cantidad: el respaldo apunta sobre todo a la home y al blog, no a las páginas de programa, que son las que necesitan competir por las búsquedas comerciales."}],
+  [{text:"La autoridad de ESAN es alta y bien ganada. El punto de mejora no es la cantidad, sino "},{text:"hacia dónde apunta",bold:true},{text:": la fuerza se concentra en la home y en Conexión ESAN, mientras varias páginas de programa tienen muy pocos enlaces propios (la página /mba tiene ~5 dominios referentes; /maestrias y /doctorado, apenas 1). Esa autoridad no está empujando a las páginas que compiten por la matrícula."}],
 ], "accent"));
 body.push(sp(200));
 body.push(callout("IMPACTO ESTIMADO DE LA FASE", [
-  "La autoridad acumulada hoy no trabaja para el negocio: si esa fuerza se canalizara mediante enlazado interno hacia las páginas del MBA Minero, las maestrías y los diplomados, podrían empezar a competir por las búsquedas comerciales que hoy se ceden por completo.",
+  "ESAN ya tiene la autoridad que muchas escuelas quisieran; el trabajo es redistribuirla. Un enlazado interno deliberado desde los artículos de Conexión ESAN \u2014 que reciben el grueso de los enlaces externos \u2014 hacia las páginas de MBA, maestrías especializadas, posgrado y diplomados haría que esa fuerza ya acumulada empuje justo donde hoy hay brechas de posición.",
 ], "red"));
 
 // ===== FASE 05 — AI OVERVIEWS =====
 body.push(pb);
 body.push(chip("FASE 05"));
-body.push(h1("AI Overviews — Google Responde y GĚRENS queda Debajo"));
-body.push(leadin("Google ya responde muchas búsquedas con un resumen generado por IA, antes de mostrar los resultados. Si el sitio no es una de las fuentes que esa IA cita, desaparece de la primera respuesta que ve el usuario \u2014 aunque la página esté posicionada más abajo. Esta sección mide dónde está ocurriendo esto."));
-body.push(h2("Búsquedas con AI Overview activo donde GĚRENS está debajo"));
-body.push(tbl(["Búsqueda", "Vol./mes", "Posición GĚRENS", "AI Overview"], [
-  ["mineras del perú", "3,600", "#12", { text: "Activo", bold: true, color: B.red }],
-  ["gestión de riesgos", "2,900", "#11", { text: "Activo", bold: true, color: B.red }],
-  ["trabajadores en minas", "2,400", "#16", { text: "Activo", bold: true, color: B.red }],
-  ["crisis energética", "1,600", "#18", { text: "Activo", bold: true, color: B.red }],
-  ["minas de oro", "1,300", "#8", { text: "Activo", bold: true, color: B.red }],
+body.push(h1("AI Overviews — La Base Informativa en Riesgo"));
+body.push(leadin("Google ya responde muchas búsquedas con un resumen generado por IA, antes de mostrar los resultados. Si el sitio no es una de las fuentes que esa IA cita, su clic desaparece \u2014 aunque la página esté bien posicionada. Para ESAN esto es delicado: justamente su mayor fuente de tráfico es el contenido informativo más fácil de absorber por la IA."));
+body.push(h2("Búsquedas con AI Overview activo que hoy dan tráfico a ESAN"));
+body.push(tbl(["Búsqueda", "Vol./mes", "Tipo", "AI Overview"], [
+  ["marcas", "110,000", "Conexión ESAN", { text: "Activo", bold: true, color: B.red }],
+  ["sueldo mínimo peru", "90,500", "Conexión ESAN", { text: "Activo", bold: true, color: B.red }],
+  ["valor económico agregado", "60,500", "Conexión ESAN", { text: "Activo", bold: true, color: B.red }],
+  ["contratos", "33,100", "Conexión ESAN", { text: "Activo", bold: true, color: B.red }],
+  ["design thinking", "33,100", "Conexión ESAN", { text: "Activo", bold: true, color: B.red }],
+  ["mba", "6,600", "Programa", { text: "Activo", bold: true, color: B.red }],
+  ["posgrado", "4,400", "Comercial", { text: "Activo", bold: true, color: B.red }],
+  ["diplomados", "4,400", "Comercial", { text: "Activo", bold: true, color: B.red }],
 ], [3906, 1700, 2200, 1700]));
 body.push(sp(300));
 body.push(callout("QUÉ SIGNIFICA PARA EL NEGOCIO", [
-  [{text:"En estas búsquedas, Google muestra arriba un resumen de IA que responde la consulta "},{text:"sin que el usuario haga clic",bold:true},{text:". GĚRENS aparece debajo, en página 1\u20132, pero el AI Overview se lleva la atención primero."}],
-  [{text:"En \u201Cmineras del perú\u201D, el AI Overview se nutre de Wikipedia, el MINEM y medios especializados \u2014 "},{text:"no de GĚRENS",bold:true},{text:", que está en #12. Aproximadamente 8 de cada 10 de las keywords donde aparece ya tienen este formato activo."}],
+  [{text:"Buena parte del tráfico estrella de ESAN llega por búsquedas que "},{text:"ya tienen un resumen de IA arriba",bold:true},{text:": marcas, sueldo mínimo, valor económico agregado, design thinking. A medida que Google responda más de estas consultas con su propia IA, ese volumen informativo \u2014 el que hoy sostiene buena parte de las 173,844 visitas \u2014 se erosiona, sin importar la posición de ESAN."}],
+  [{text:"En las búsquedas comerciales también aparece el AI Overview (mba, posgrado, diplomados). Y cuando alguien compara escuelas (\u201Cmejores mba perú\u201D), Google muestra "},{text:"agregadores y rankings de terceros",bold:true},{text:", con ESAN representada por artículos de Conexión \u2014 no por su página de MBA."}],
 ], "accent"));
 body.push(sp(200));
 body.push(callout("IMPACTO ESTIMADO DE LA FASE", [
-  "El tráfico informativo del blog \u2014 lo único que hoy sostiene las cifras de GĚRENS \u2014 es justamente el más expuesto a los AI Overviews: a medida que Google responda más consultas con IA, ese volumen se erosionará. Es otra razón para reorientar la estrategia hacia las búsquedas comerciales de posgrado minero, menos absorbidas por la IA y de mucho mayor valor.",
+  "El tráfico informativo de Conexión ESAN \u2014 la mayor fuente de visitas del dominio \u2014 es justamente el más expuesto a los AI Overviews. Es la razón estratégica para no depender de él: reorientar el esfuerzo hacia las búsquedas comerciales de posgrado (menos absorbidas por la IA y de mucho mayor valor de matrícula) y asegurar que, cuando la IA cite fuentes en esas búsquedas, ESAN sea una de ellas, protege el negocio a futuro.",
 ], "red"));
 
 // ===== CONCLUSIONES =====
@@ -405,18 +432,18 @@ body.push(pb);
 body.push(h1("Conclusiones y Plan de Acción"));
 body.push(h2("Principales hallazgos priorizados"));
 body.push(tbl(["#", "Hallazgo", "Prioridad", "Impacto", "Plazo"], [
-  ["1", "Home de 37 MB con LCP de 7.4 s", FAIL, { text: "Crítico", color: B.red, bold: true }, "1-3 meses"],
-  ["2", "Presencia orgánica mínima (1,295 visitas/mes)", FAIL, { text: "Alto", color: B.orange, bold: true }, "3-6 meses"],
-  ["3", "Páginas de programa (MBA Minero, maestrías) no posicionan", FAIL, { text: "Alto", color: B.orange, bold: true }, "1-3 meses"],
-  ["4", "Ausente en búsquedas comerciales de posgrado", WARN, { text: "Alto", color: B.orange, bold: true }, "3-6 meses"],
-  ["5", "Tráfico informativo expuesto a AI Overviews", WARN, { text: "Medio", color: B.orange, bold: true }, "Continuo"],
+  ["1", "Contenido informativo (mayor fuente de tráfico) expuesto a AI Overviews", FAIL, { text: "Crítico", color: B.red, bold: true }, "Continuo"],
+  ["2", "Páginas de programa lentas (home 24 MB; MBA LCP 5.1 s, CLS 0.22)", FAIL, { text: "Alto", color: B.orange, bold: true }, "1-3 meses"],
+  ["3", "Posgrado (#53) y diplomados (#38) sin landing comercial posicionada", FAIL, { text: "Alto", color: B.orange, bold: true }, "1-3 meses"],
+  ["4", "Canibalización: un blog rankea por \u201Cmaestría en marketing\u201D, no el programa", WARN, { text: "Medio", color: B.orange, bold: true }, "1-2 meses"],
+  ["5", "Autoridad de dominio no canalizada hacia páginas de programa", WARN, { text: "Medio", color: B.orange, bold: true }, "2-4 semanas"],
 ], [600, 4406, 1700, 1400, 1400]));
 body.push(sp(300));
 body.push(callout("PLAN DE ACCIÓN POR FASES", [
-  [{text:"Mes 1-3 (Quick wins): ",bold:true},{text:"optimizar el peso y la velocidad de la home (objetivo LCP < 2.5 s, reducir el peso de 37 MB) y trabajar el on-page de las páginas de programa \u2014 MBA Minero, MBA STEM y maestrías \u2014 que hoy no posicionan."}],
-  [{text:"Mes 4-6 (Nicho minero): ",bold:true},{text:"capturar las búsquedas donde GĚRENS debería ser la autoridad (gestión minera, maestría en gestión minera, diplomados mineros) y canalizar la autoridad existente hacia esas páginas mediante enlazado interno."}],
-  [{text:"Mes 7-12 (Escala): ",bold:true},{text:"competir por los términos generales de postgrado (posgrado, maestrías, diplomados) y conectar el blog informativo con las páginas comerciales. Meta: pasar de ~1,295 a varios miles de visitas/mes de intención comercial."}],
-  [{text:"Siguiente paso: ",bold:true},{text:"reunión de 30-45 min para revisar hallazgos, propuesta de roadmap priorizado y definición de las primeras acciones (velocidad de la home y on-page de programas)."}],
+  [{text:"Mes 1-3 (Quick wins): ",bold:true},{text:"optimizar el peso y la velocidad de la home (24 MB) y de las páginas de programa \u2014 objetivo LCP < 2.5 s y CLS < 0.10 en /mba y maestrías \u2014, corregir el og:title \u201CHome Esan\u201D y el title de la home, y resolver la canibalización en \u201Cmaestría en marketing\u201D (que rankee la página de programa, no el artículo)."}],
+  [{text:"Mes 4-6 (Captura comercial): ",bold:true},{text:"crear/optimizar landings para posgrado, diplomados y las especializadas donde hoy hay brecha, y canalizar la autoridad del dominio mediante enlazado interno desde Conexión ESAN hacia esas páginas. Meta: ~1,500 visitas/mes adicionales de intención comercial."}],
+  [{text:"Mes 7-12 (Blindaje y escala): ",bold:true},{text:"reducir la dependencia del tráfico informativo expuesto a IA, reforzar contenido de decisión (comparativas de programas, rankings, ROI) y asegurar presencia de ESAN como fuente citada en los AI Overviews de las búsquedas de posgrado."}],
+  [{text:"Siguiente paso: ",bold:true},{text:"reunión de 30-45 min para revisar hallazgos, propuesta de roadmap priorizado y definición de las primeras acciones (velocidad de páginas de programa y captura de posgrado/diplomados)."}],
 ], "green"));
 
 // Guardia: inserta un espaciador entre cualquier par de Tablas/callouts adyacentes
@@ -436,7 +463,7 @@ const doc = new Document({
     headers: { default: new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT,
       border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: "DDDDDD", space: 6 } }, spacing: { after: 200 },
       children: [ new ImageRun({ data: fs.readFileSync(CH + "logo.png"), type: "png", transformation: { width: 118, height: Math.round(118*0.2417) } }),
-        new TextRun({ text: "   ·   Auditoría SEO & Performance   ·   gerens.pe", font: B.font, size: 13, color: B.gray3 }) ] })] }) },
+        new TextRun({ text: "   ·   Auditoría SEO & Performance   ·   esan.edu.pe", font: B.font, size: 13, color: B.gray3 }) ] })] }) },
     footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER,
       children: [ new TextRun({ text: "Pág. ", font: B.font, size: 15, color: B.gray3 }),
         new TextRun({ children: [PageNumber.CURRENT], font: B.font, size: 15, color: B.gray3 }),
@@ -444,4 +471,4 @@ const doc = new Document({
     children: spacerGuard([...cover, pb, ...body]),
   }],
 });
-Packer.toBuffer(doc).then(buf => { fs.writeFileSync("auditoria_gerens.docx", buf); console.log("OK docx", buf.length); });
+Packer.toBuffer(doc).then(buf => { fs.writeFileSync("auditoria_esan.docx", buf); console.log("OK docx", buf.length); });
