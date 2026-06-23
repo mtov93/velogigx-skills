@@ -127,26 +127,42 @@ def cwv(metrics, fname):
         ax.plot([tgt,tgt],[y-bh*0.85,y+bh*0.85], color="#7a7a7a", lw=3, solid_capstyle="round")
     fig.savefig(f"{OUT}/{fname}", transparent=True, bbox_inches="tight", pad_inches=0.12); plt.close(fig)
 
-# ================= DATOS GERENS =================
-donut(0.3, "<1%", "De dónde viene el tráfico orgánico",
-      ["De las ~1,295 visitas/mes, casi todo es",
-       "blog informativo y búsquedas por el",
-       "nombre \u201CGerens\u201D \u2014 no de quien evalúa",
-       "un posgrado."],
+# ---------- 6. VISIBILIDAD COMERCIAL (barras agrupadas Top5/Top10) ----------
+def visibility(groups, fname, total_kw=10):
+    n=len(groups)
+    fig,ax=plt.subplots(figsize=(13,4.6),dpi=200); fig.patch.set_alpha(0); ax.axis("off")
+    ax.set_xlim(-0.6,n-0.4); ax.set_ylim(0,total_kw*1.18)
+    bw=0.30
+    for i,(sch,t5,t10) in enumerate(groups):
+        rrect(ax, i-bw-0.02, 0, bw, max(t5,0.05), ACCENT, r=0.0)
+        rrect(ax, i+0.02,     0, bw, max(t10,0.05), "#b9d8c1", r=0.0)
+        ax.text(i-bw/2-0.02, t5+0.18, str(t5), ha="center", va="bottom", color=ACCENT, fontproperties=F("ExtraBold",19))
+        ax.text(i+bw/2+0.02, t10+0.18, str(t10), ha="center", va="bottom", color="#5e8c6a", fontproperties=F("ExtraBold",19))
+        col = ACCENT if i==0 else NAVY
+        ax.text(i, -total_kw*0.06, sch, ha="center", va="top", color=col, fontproperties=F("Bold",18))
+    ax.add_patch(FancyBboxPatch((-0.55,total_kw*1.06),0.16,total_kw*0.05,boxstyle="round,pad=0,rounding_size=0",fc=ACCENT,ec="none"))
+    ax.text(-0.34,total_kw*1.085,"en Top 5", ha="left", va="center", color=GRAY_D, fontproperties=F("Medium",15))
+    ax.add_patch(FancyBboxPatch((1.0,total_kw*1.06),0.16,total_kw*0.05,boxstyle="round,pad=0,rounding_size=0",fc="#b9d8c1",ec="none"))
+    ax.text(1.21,total_kw*1.085,"en Top 10", ha="left", va="center", color=GRAY_D, fontproperties=F("Medium",15))
+    fig.savefig(f"{OUT}/{fname}", transparent=True, bbox_inches="tight", pad_inches=0.15); plt.close(fig)
+
+# ================= DATOS ESAN =================
+donut(15, "~15%", "De dónde viene el tráfico orgánico",
+      ["De las ~173,844 visitas/mes, la mayor parte",
+       "llega por artículos informativos de Conexión",
+       "ESAN (tipo de cambio, recibos por honorarios,",
+       "marcas) \u2014 no por quien evalúa una maestría."],
       "donut.png")
 
-kpi_cards([("1 295","visitas/mes orgánicas",False),
-           ("7.4 s","tiempo de carga (LCP)",False),
-           ("37 MB","peso de la página",False),
-           ("~33 000","búsquedas/mes del mercado",True)],
+kpi_cards([("173 844","visitas/mes orgánicas",True),
+           ("6.0 s","tiempo de carga (LCP)",False),
+           ("24 MB","peso de la home",False),
+           ("~37 000","búsquedas/mes del mercado",True)],
           "kpis.png")
 
-hbars([("Scribd",48),("gob.pe",34),("ESAN",30),("Gestión",23),
-       ("Minem",23),("Studocu",23),("El Comercio",21)], "competidores.png")
+visibility([("ESAN",5,7),("UPC",4,7),("Centrum",4,4),("Pacífico",1,1)], "visibilidad.png", total_kw=10)
 
-compare2([("gerens.pe",680,GRAY),("esan.edu.pe",96692,ACCENT)], "eficiencia.png", prefix="$")
-
-cwv([("LCP",7.4,2.5,RED),("FCP",2.1,1.8,ORANGE),
-     ("Speed Index",8.1,3.4,RED),("TTI",17.3,3.8,RED)], "cwv.png")
+cwv([("LCP",6.0,2.5,RED),("FCP",2.6,1.8,ORANGE),
+     ("Speed Index",4.7,3.4,ORANGE),("TTI",6.6,3.8,RED)], "cwv.png")
 
 print("OK charts:", os.listdir(OUT))
