@@ -27,6 +27,29 @@ GRAY="#999999"; GRAY_D="#666666"; NAVY="#2b3a52"; TRACK="#ededed"
 OUT="/home/claude/charts"
 os.makedirs(OUT, exist_ok=True)
 
+# ---------- Optimizacion de PNGs (v5): charts livianos SIN perdida visible ----------
+# Reescala cada visual a 2x su ancho de display y lo pasa a paleta de 256 colores
+# (son graficos de color plano -> el ojo no nota diferencia). Reduce el peso del .docx
+# ~50% (p.ej. donut 156KB -> 50KB; total imagenes 308KB -> ~132KB). Corre automaticamente
+# al terminar el script (atexit), despues de generar todos los visuales. NO toca logo.png.
+import atexit, glob as _glob
+def _optimize_charts(maxw=1280):
+    for _p in _glob.glob(f"{OUT}/*.png"):
+        if os.path.basename(_p) == "logo.png":
+            continue
+        try:
+            _im = Image.open(_p).convert("RGBA")
+            _bg = Image.new("RGBA", _im.size, (255,255,255,255))   # aplanar sobre blanco (paginas del doc son blancas)
+            _im = Image.alpha_composite(_bg, _im).convert("RGB")
+            if _im.size[0] > maxw:
+                _h = round(_im.size[1] * maxw / _im.size[0])
+                _im = _im.resize((maxw, _h), Image.LANCZOS)
+            _im = _im.quantize(colors=256, method=Image.MEDIANCUT, dither=Image.NONE)
+            _im.save(_p, optimize=True)
+        except Exception as _e:
+            print(f"[optimize] omitido {_p}: {_e}")
+atexit.register(_optimize_charts)
+
 def rrect(ax, x, y, w, h, color, r=0.06, ec="none", lw=0):
     p = FancyBboxPatch((x,y), w, h, boxstyle=f"round,pad=0,rounding_size={r}",
                        fc=color, ec=ec, lw=lw, mutation_aspect=1)
